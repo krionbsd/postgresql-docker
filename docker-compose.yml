@@ -1,0 +1,14 @@
+---
+
+dbdata:
+  image: krion77/postgresql:10
+  volumes:
+    - /var/lib/postgresql
+  command: "true"
+
+db:
+  image: krion77/postgresql:10
+  volumes_from:
+    - dbdata
+  ports:
+    - "5432:5432"
